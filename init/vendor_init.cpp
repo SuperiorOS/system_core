@@ -1,6 +1,5 @@
 /*
 Copyright (c) 2013, The Linux Foundation. All rights reserved.
-
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
 met:
@@ -13,7 +12,6 @@ met:
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
 THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -29,9 +27,22 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "vendor_init.h"
 
+namespace android {
+namespace init {
+
 /* init vendor override stubs */
 
 __attribute__ ((weak))
 void vendor_load_properties()
 {
+}
+
+#ifdef TARGET_CREATE_DEVICE_SYMLINKS
+__attribute__ ((weak))
+void vendor_create_device_symlinks(int, std::string, std::vector<std::string>&)
+{
+}
+#endif
+
+}
 }

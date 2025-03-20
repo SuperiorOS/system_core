@@ -283,7 +283,10 @@ cc_defaults {
     name: "init_second_stage_defaults",
     recovery_available: true,
     stem: "init",
-    defaults: ["init_defaults"],
+    defaults: [
+        "init_defaults",
+        "vendor_init_defaults",
+    ],
     srcs: ["main.cpp"],
     symlinks: ["ueventd"],
 }
